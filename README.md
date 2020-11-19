@@ -120,7 +120,7 @@ Uniquement si `BETS_OPEN` est True, erreur 403 sinon.
 200 si OK, 500 si erreur.
 
 
-### /bet/{player}/{ia_champion}/{bet}
+### /bets/{player}/{ia_champion}/{bet}
 
 #### POST
 
@@ -131,7 +131,7 @@ Le joueur `player` (str) place un `bet` (float) sur le `ia_champion` (int mais v
 500 si erreur.
 
 
-### /allin/{player}/{ia_champion}
+### /bets/{player}/{ia_champion}/allin
 
 #### POST
 

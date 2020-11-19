@@ -1,9 +1,13 @@
 from app import api
 
 from app.resources.shape import DataFrameShape
-from app.resources.players import PlayersInfo, PlayerActions, PlayerRSA
-from app.resources.bets import BetsInfo, BetsAction, BetsAllIn
-from app.resources.bet_multiplier import BetMultiplierInfo
+from app.resources.players.player_rsa import PlayerRSA
+from app.resources.players.players_actions import PlayerActions
+from app.resources.players.players_info import PlayersInfo
+from app.resources.bets.bets_allin import BetsAllIn
+from app.resources.bets.bets_actions import BetsAction
+from app.resources.bets.bets_info import BetsInfo
+from app.resources.bet_multiplier.bet_multiplier import BetMultiplierInfo
 
 # Add every routes of the project
 api.add_resource(DataFrameShape, '/api/shape')
