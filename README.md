@@ -8,7 +8,7 @@ L'objectif de ce projet est de faire un mini serveur Salty Bet.
 Si `True`, les utilisateurs peuvent placer leurs bets. Sinon non. Par défaut : `False`
 
 `BET_MULTIPLIER`: float
-Valeur du multiplcateur de bets.
+Valeur du multiplcateur de bets. Par défaut : 1
 
 
 ## Routes pour le MJ
@@ -35,7 +35,7 @@ Ne fait rien si `BETS_OPEN` est `True`. Passe `BETS_OPEN` à True et efface la t
 
 #### PUT
 
-Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à True et attribue les bets aux vainqueurs/perdants sinon.
+Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à False et attribue les bets aux vainqueurs/perdants sinon.
 200 si OK, 500 si erreur.
 
 
@@ -49,7 +49,7 @@ Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à True et attribue l
 
 
 
-### /players/{player}/delete
+### /players/{player}
 
 #### DELETE
 
@@ -84,7 +84,6 @@ Erreur 404 si le joueur n'existe pas.
 200 si OK, 500 si erreur.
 
 
-### /players/{player}/create
 
 #### POST
 
@@ -121,7 +120,7 @@ Uniquement si `BETS_OPEN` est True, erreur 403 sinon.
 200 si OK, 500 si erreur.
 
 
-### /bet/{player}/{bet}/{ia_champion}
+### /bet/{player}/{ia_champion}/{bet}
 
 #### POST
 
