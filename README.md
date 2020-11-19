@@ -2,13 +2,15 @@
 
 L'objectif de ce projet est de faire un mini serveur Salty Bet.
 
-## Variables d'environnements
+## Variables globales
 
 `BETS_OPEN` : bool
 Si `True`, les utilisateurs peuvent placer leurs bets. Sinon non. Par défaut : `False`
 
 `BET_MULTIPLIER`: float
 Valeur du multiplcateur de bets. Par défaut : 1
+
+
 
 
 ## Routes pour le MJ

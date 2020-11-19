@@ -139,3 +139,7 @@ cython_debug/
 
 # VS Code config files
 .vscode
+
+# Mongo ignore parameters
+mongo_params.sh
+test_data.json
