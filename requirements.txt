@@ -1,0 +1,4 @@
+flask_swagger>=0.2.14
+flask_restful>=0.3.7
+flask_swagger_ui>=3.20.9
+flask_cors>=3.0.8
