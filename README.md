@@ -2,7 +2,7 @@
 
 L'objectif de ce projet est de faire un mini serveur Salty Bet.
 
-## Variables globales
+## Variables globales (collection globals)
 
 `BETS_OPEN` : bool
 Si `True`, les utilisateurs peuvent placer leurs bets. Sinon non. Par défaut : `False`
@@ -20,7 +20,7 @@ Toutes ces routes nécessiteront d'avoir une valeur `auth_token` dans le body de
 ### /init
 
 #### POST
-Purge l'intégralité de la base et réinitialise complètement la base (joueurs et bets). A utiliser avec modération.
+Dump le contenu de la `ongoing_game` dans un enregistrement horodaté de `games_history`. Purge l'intégralité des collections `players` et `ongoing_game`. Reset la collection `globals` à sa valeur par défaut. A utiliser avec modération.
 200 si OK, 500 si erreur.
 
 
@@ -28,7 +28,7 @@ Purge l'intégralité de la base et réinitialise complètement la base (joueurs
 
 #### PUT
 
-Ne fait rien si `BETS_OPEN` est `True`. Passe `BETS_OPEN` à True et efface la table des ongoing bets sinon.
+Ne fait rien si `BETS_OPEN` est `True`. Passe `BETS_OPEN` à True.
 200 si OK, 500 si erreur.
 
 
@@ -37,8 +37,17 @@ Ne fait rien si `BETS_OPEN` est `True`. Passe `BETS_OPEN` à True et efface la t
 
 #### PUT
 
-Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à False et attribue les bets aux vainqueurs/perdants sinon.
+Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à False.
 200 si OK, 500 si erreur.
+
+
+
+### /bets/resolve/{champion}
+
+#### POST
+
+`champion` est un `int` dont la valeur est 1 ou 2. Résout tous les bets en cours et incrémente les soldes des joueurs au besoin. Dump l'état de la collection `players` dans la collection `ongoing_bets` de manière horodatée.
+200 si OK, 403 si `BETS_OPEN` est `True`, 500 si erreur.
 
 
 

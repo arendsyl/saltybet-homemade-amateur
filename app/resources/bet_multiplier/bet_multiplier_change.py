@@ -20,6 +20,11 @@ class BetMultiplierChange(Resource):
               description: Token d'authentification du MJ
               required: true
               type: string
+            - in: path
+              name: facteur
+              description: Multiplicateur du bet
+              required: true
+              type: float
         responses:
             200:
                 description: La base a correctement été réinitialisée

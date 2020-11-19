@@ -9,7 +9,11 @@ class Init(Resource):
 
     def post(self) -> Tuple[Dict[str, Any], int]:
         """
-        Purge l'intégralité de la base et réinitialise complètement la base (joueurs et bets). A utiliser avec modération.
+        Dump le contenu de la `ongoing_game` dans un enregistrement horodaté de\
+             `games_history`. Purge l'intégralité des collections `players` et \
+                 `ongoing_game`. Reset la collection `globals` à sa valeur par \
+                     défaut. A utiliser avec modération.
+
         ---
         tags:
             - Routes du MJ

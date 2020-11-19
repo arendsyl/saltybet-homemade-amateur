@@ -9,8 +9,7 @@ class BetsClose(Resource):
 
     def put(self) -> Tuple[Dict[str, Any], int]:
         """
-        Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à False et \
-            attribue les bets aux vainqueurs/perdants sinon.
+        Ne fait rien si `BETS_OPEN` est `False`. Passe `BETS_OPEN` à False.
         ---
         tags:
             - Routes du MJ
