@@ -24,11 +24,9 @@ class DataFrameShape(Resource):
               type: string
         responses:
             200:
-                description: Json contenant la forme du dataframe \
-                    passé dans le body de la requête HTTP.
+                description: Json contenant la forme du dataframe passé dans le body de la requête HTTP.
             404:
-                description: La valeur de la clé dans le body de la \
-                    requête n'est pas 'url'
+                description: La valeur de la clé dans le body de la requête n'est pas 'url'
         """
 
         body_parser = reqparse.RequestParser()
@@ -55,11 +53,9 @@ class DataFrameShape(Resource):
               type: string
         responses:
             200:
-                description: Json contenant la forme du dataframe
-                passé dans le body de la requête HTTP.
+                description: Json contenant la forme du dataframe passé dans le body de la requête HTTP.
             404:
-                description: La valeur de la clé dans le body de la
-                requête n'est pas 'url'
+                description: La valeur de la clé dans le body de la requête n'est pas 'url'
         """
         url_args = request.args
         try:

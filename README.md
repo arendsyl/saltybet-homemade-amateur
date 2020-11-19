@@ -22,7 +22,7 @@ Purge l'intégralité de la base et réinitialise complètement la base (joueurs
 200 si OK, 500 si erreur.
 
 
-### /open_bets
+### /bets/open
 
 #### PUT
 
@@ -31,7 +31,7 @@ Ne fait rien si `BETS_OPEN` est `True`. Passe `BETS_OPEN` à True et efface la t
 
 
 
-### /close_bets
+### /bets/close
 
 #### PUT
 
@@ -120,7 +120,7 @@ Uniquement si `BETS_OPEN` est True, erreur 403 sinon.
 200 si OK, 500 si erreur.
 
 
-### /bet/{player}/{ia_champion}/{bet}
+### /bets/{player}/{ia_champion}/{bet}
 
 #### POST
 
