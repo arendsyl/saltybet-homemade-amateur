@@ -142,4 +142,4 @@ cython_debug/
 
 # Mongo ignore parameters
 mongo_params.sh
-*test_data.json
+*test_data*
