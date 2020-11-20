@@ -47,7 +47,13 @@ class PlayerActions(Resource):
         200 si OK, 404 si le joueur n'existe pas, 500 si erreur.
         ---
             tags:
-                - Route pour les joueurs
+                - Route du MJ
+            parameters:
+                - in: body
+                    name: auth_token
+                    description: Token d'authentification du MJ
+                    required: true
+                    type: string
             responses:
                 - 200:
                     description: Le joueur a bien été supprimé
